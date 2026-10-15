@@ -8,8 +8,10 @@ and explicit limits on completed work. No new implementation claims were added.
 
 Repository preparation: the student authorized upload. `git ls-remote --symref`
 completed successfully and returned no refs for the supplied repository. The
-existing Git identity is configured. Publication will be checked after push;
-remote access does not establish instructor access to Figma.
+existing Git identity is configured. The design commit
+`d17d873649c44990a07063d799e9d0561820ca2a` was pushed to main and verified with
+`git ls-remote origin refs/heads/main`. Report links now use that fixed commit.
+Remote access does not establish instructor access to Figma.
 
 | Check | Observed result |
 | --- | --- |

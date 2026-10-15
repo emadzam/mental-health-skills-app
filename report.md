@@ -109,13 +109,13 @@ the AI assistance is included in my design notes.
 ## Project links and submission details
 
 - Repository: [mental-health-skills-app](https://github.com/emadzam/mental-health-skills-app)
-- Submitted commit: **PENDING — these local files have not been committed or uploaded.**
+- Submitted design commit: [d17d873649c44990a07063d799e9d0561820ca2a](https://github.com/emadzam/mental-health-skills-app/commit/d17d873649c44990a07063d799e9d0561820ca2a)
 - [Figma storyboard](https://www.figma.com/design/Ec255iH4NSnqPSmo5N6WQ6?node-id=1-391)
-- [Design notes and flow diagram](docs/design-pipeline.md)
-- [README](README.md) and [agent instructions](AGENTS.md)
-- [Verification notes](docs/verification.md)
+- [Design notes and flow diagram](https://github.com/emadzam/mental-health-skills-app/blob/d17d873649c44990a07063d799e9d0561820ca2a/docs/design-pipeline.md)
+- [README](https://github.com/emadzam/mental-health-skills-app/blob/d17d873649c44990a07063d799e9d0561820ca2a/README.md) and [agent instructions](https://github.com/emadzam/mental-health-skills-app/blob/d17d873649c44990a07063d799e9d0561820ca2a/AGENTS.md)
+- [Design verification notes](https://github.com/emadzam/mental-health-skills-app/blob/d17d873649c44990a07063d799e9d0561820ca2a/docs/verification.md)
 
-Before submitting, I still need to upload the documents, add the actual commit ID,
-and replace the local document links above with accessible links to the submitted
-version. I also need to check that my instructor can access the repository and
-Figma file.
+The design documents have been uploaded to GitHub. The commit above identifies
+the design version, and the document links point to that fixed version. This
+report was finalized afterward to add those submission details. I still need to
+check that my instructor can access the repository and Figma file before I submit.
