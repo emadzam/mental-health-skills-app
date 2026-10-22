@@ -84,14 +84,18 @@ also checked. Screenshots and exact record IDs are linked in the verification no
 
 ## Project links
 
-- Repository: https://github.com/emadzam/mental-health-skills-app
-- Submitted implementation commit: **To be filled after publishing the checked checkpoint.**
-- [Implementation and API notes](../design-pipeline.md)
-- [Verification results and screenshots](../verification.md)
-- [Successful live model reply](../evidence/part-3-2-live-model.png)
+- Repository: [Part 3.2 branch](https://github.com/emadzam/mental-health-skills-app/tree/codex/part-3-2)
+- Submitted implementation commit: [93796ae7b23e90885ce64e014124771974dcca04](https://github.com/emadzam/mental-health-skills-app/commit/93796ae7b23e90885ce64e014124771974dcca04)
+- [Implementation and API notes](https://github.com/emadzam/mental-health-skills-app/blob/93796ae7b23e90885ce64e014124771974dcca04/docs/design-pipeline.md)
+- [Verification results and screenshots](https://github.com/emadzam/mental-health-skills-app/blob/93796ae7b23e90885ce64e014124771974dcca04/docs/verification.md)
+- [Successful live model reply](https://github.com/emadzam/mental-health-skills-app/blob/93796ae7b23e90885ce64e014124771974dcca04/docs/evidence/part-3-2-live-model.png)
 - [Original Figma storyboard](https://www.figma.com/design/Ec255iH4NSnqPSmo5N6WQ6?node-id=1-391)
 
 ## Limits and AI use
+
+The implementation and evidence were committed and uploaded on the Part 3.2 branch.
+The links above identify that fixed version. This report was finalized afterward
+to add the verified commit and links. Part 3.1 remains preserved on main.
 
 This version is for one fictional demo user in one tab. It does not have login,
 automatic data deletion, or a full accessibility audit. Broader evaluation belongs

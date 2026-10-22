@@ -5,8 +5,10 @@ verification notes. Part 3.1 report.md and its existing local edit are preserved
 The Part 3.2 submission file is docs/part-3-2/report.md.
 
 Branch: codex/part-3-2, based on ada0f9ba06cbcf37961db7c4daae3757a2b91eb9.
-A checked implementation checkpoint is being published; do not claim its hash
-until Git confirms it. main remains the original Part 3.1 branch.
+Implementation checkpoint: 93796ae7b23e90885ce64e014124771974dcca04, pushed to
+origin/codex/part-3-2 and confirmed with git ls-remote. main remains the original
+Part 3.1 branch. The report is finalized in a subsequent documentation commit;
+verify that commit's remote HEAD after push. Report links pin the implementation.
 
 Working app: http://127.0.0.1:8000/ . FastAPI serves the built Vue interface.
 The Vite development server is stopped. See README to rebuild or restart.
@@ -37,7 +39,7 @@ save/forget, 320px layout and keyboard support access. A later outcome shows
 separate setup timing (0.1 seconds in a fast automated walkthrough, not a human
 setup estimate). Screenshots in docs/evidence are fictional records only.
 
-Next: verify the published checkpoint and final report links. The student must
+Next: verify the final report links and documentation push. The student must
 review and upload the Part 3.2 report to the course page; no course submission,
 main merge, external deployment, or video recording is authorized/performed.
 Remaining product limits: single-user/single-tab, no full accessibility audit or

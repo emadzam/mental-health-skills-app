@@ -140,3 +140,11 @@ this is not an estimate of a person's reading or decision time. Guided time in
 that stopped walkthrough was 0.3 seconds. Screenshot:
 [Separate setup timing](evidence/part-3-2-setup-time.png). Initial recovery finishes
 before Start is enabled, preventing a new session from racing startup recovery.
+
+Publication: implementation checkpoint 93796ae7b23e90885ce64e014124771974dcca04
+was pushed to origin/codex/part-3-2 and the hash verified with git ls-remote.
+main remains ada0f9ba06cbcf37961db7c4daae3757a2b91eb9. All 44 staged files were
+scanned against the local private key before committing; it was absent, and neither
+backend/.env nor app.sqlite3 was included. The Part 3.1 report's existing local edit
+was intentionally excluded. A follow-up documentation commit finalizes the Part 3.2
+report links without changing the checked application code.
