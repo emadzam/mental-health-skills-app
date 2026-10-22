@@ -1,6 +1,6 @@
 # Mental Health Skills App
 
-IST 402 — Assignment 3, Part 3.1: Research and Design
+IST 402 — Assignment 3, Part 3.2: Working Application and Safety
 
 ## Purpose
 
@@ -16,23 +16,26 @@ mental health support service.
 
 ## Current milestone
 
-Part 3.1 proposes a design; no running application is required or implemented.
-The chosen skill is paced breathing for a fictional student taking a short break
-before a presentation. The circle-cue sketch is the starting design direction.
-See [the design proposal](docs/design-pipeline.md), [verification notes](docs/verification.md),
-and [the submission report](report.md). Capabilities described below are plans
-for later implementation unless explicitly identified as completed design work.
+The local Vue/FastAPI/SQLite prototype now supports the 60-second exercise,
+pause/stop, text-only cues, saved sessions/messages, optional remembered cues,
+read-only scoped SQL retrieval, and independent U.S. support information.
+The real model path was verified with GPT-5.4 Mini: query planning, restricted SQL
+retrieval, a grounded answer, and persistence of the actual reply. Mock mode is
+also available and clearly labeled; fresh checkouts default to mock without a key.
+See [the design and implementation notes](docs/design-pipeline.md),
+[verification evidence](docs/verification.md), and the [Part 3.2 report](docs/part-3-2/report.md).
+The original [Part 3.1 report](report.md) is preserved.
 Repository: https://github.com/emadzam/mental-health-skills-app
 
 [Original Figma storyboard](https://www.figma.com/design/Ec255iH4NSnqPSmo5N6WQ6?node-id=1-391)
-contains eight editable static design screens. Instructor sharing access still
-needs checking; the frames do not demonstrate a working application.
+contains eight editable static design screens. The student confirmed instructor
+access for Part 3.1. Original frames were preserved; no new Figma work was needed.
 
 ## Project design guidelines
 
 The skill, fictional scenario, and circle-cue direction were selected with the
-student. The detailed behavior below is a Part 3.1 proposal for student review,
-not implemented or tested application behavior.
+student. The guidelines below originated in Part 3.1; implementation status and
+resolved behavior are recorded in the Part 3.2 section of the design notes.
 
 Class principles to carry into your design:
 
@@ -81,7 +84,71 @@ within the assignment's scope. Record detailed design decisions in
 - Database: SQLite. The planned database is data/app.sqlite3. Only the Python
   backend accesses it; the frontend receives data through the API.
 
-The planned application will run on localhost. No setup or run commands exist yet.
+The application runs on localhost. Use one tab; all records belong to one fictional
+demo student. This is not an authenticated or multi-user service.
+
+## Run the working prototype
+
+The currently verified Windows environment uses Python 3.12.14, Node 24.19.0,
+and pnpm 11.25.0. Dependencies are local to backend/.venv and frontend/node_modules.
+Secrets and the working database are ignored by Git. SQLite is created once on
+startup; no fictional records are reseeded. Browser walkthrough records persist.
+
+From the project root, with the frontend already built:
+
+```powershell
+.\backend\.venv\Scripts\python.exe -m uvicorn backend.main:app --host 127.0.0.1 --port 8000
+```
+
+Open http://127.0.0.1:8000. Press Ctrl+C in that server terminal to stop it.
+Starting the same command again preserves the SQLite records. These start/stop
+and restart operations were checked. No activation script is necessary.
+
+For a fresh checkout, install Python/Node/pnpm first if they are not present.
+The exact executables below were used on this computer (rather than the broken
+WindowsApps Python alias):
+
+```powershell
+$pythonExe = "$env:USERPROFILE\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe"
+$pnpmExe = "$env:USERPROFILE\.cache\codex-runtimes\codex-primary-runtime\dependencies\bin\fallback\pnpm.cmd"
+& $pythonExe -m venv backend/.venv
+.\backend\.venv\Scripts\python.exe -m pip install -r backend/requirements.lock.txt
+& $pnpmExe --dir frontend install --frozen-lockfile --store-dir .pnpm-store
+& $pnpmExe --dir frontend build
+```
+
+On another computer use its Python and pnpm executable paths. The checked build
+command is `pnpm --dir frontend build`; the checked development command is
+`pnpm --dir frontend dev` (port 5173, proxies /api to FastAPI on port 8000).
+The approved esbuild installation script is declared in frontend/pnpm-workspace.yaml.
+
+Configuration: backend/config.py explicitly loads backend/.env. A local file was
+initially created from backend/.env.example; the student subsequently entered a
+private API key locally. It remains ignored and was never printed or committed.
+If absent, mock mode defaults on. For live setup, set MODEL_MODE=openai,
+OPENAI_API_KEY, and an available OPENAI_MODEL locally, then restart FastAPI.
+Never send a key in chat. Health reports presence only, not values; it does not
+establish a successful live call. live_verified becomes true only after a live
+answer is saved successfully during the current server run; it resets on restart.
+The approved verification used one rejected generation attempt, then two successful
+generation calls, plus one read-only model-access check. No further calls were made.
+
+## Checked commands
+
+```powershell
+.\backend\.venv\Scripts\python.exe -m pytest backend/tests -q
+pnpm --dir frontend test
+pnpm --dir frontend build
+.\backend\.venv\Scripts\python.exe backend/inspect_db.py
+.\backend\.venv\Scripts\python.exe -m backend.verify_records
+```
+
+Use the bundled pnpm path above if pnpm is not on PATH. Backend checks use isolated
+temporary databases. inspect_db.py opens the runtime database read-only;
+verify_records compares API messages/sessions with the same SQLite rows. See
+docs/verification.md for observed results, screenshots, and known limitations.
+Some operations required the desktop host's normal permissions because the
+sandbox blocked local sockets, temporary files, and installation symlinks.
 
 ## Secrets and APIs
 
@@ -173,9 +240,9 @@ guidelines. Figma edits do not automatically update application code.
 
 ## Getting started
 
-Read `AGENTS.md` and `docs/design-pipeline.md`. The base folders and root documents
-are in place. Review the proposed design and resolve the open questions before
-requesting implementation. Part 3.1 includes a design proposal and mockups only.
+Read `AGENTS.md` and the Part 3.2 section of `docs/design-pipeline.md`. Use the run
+commands above to open the local prototype. The original Part 3.1 design/report
+remains available; Part 3.2 has implementation evidence and an honest mock/live distinction.
 
 Add supporting project notes as work requires them. Installation, interface
 building, FastAPI/model connections, SQLite, RAG, and data views are later tasks.

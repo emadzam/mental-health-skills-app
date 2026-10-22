@@ -1,0 +1,12 @@
+backend/.env
+backend/.venv/
+**/__pycache__/
+.pytest_cache/
+*.pyc
+frontend/node_modules/
+frontend/dist/
+frontend/.pnpm-store/
+data/*.sqlite3*
+data/*.db*
+*.log
+docs/evidence/*.json

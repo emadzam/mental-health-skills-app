@@ -1,34 +1,45 @@
-# Current handoff — Part 3.1
+# Current handoff — Part 3.2 completion
 
-Only Research and Design is authorized. No application implementation.
+Read README.md, AGENTS.md, and the final Part 3.2 sections in the design and
+verification notes. Part 3.1 report.md and its existing local edit are preserved.
+The Part 3.2 submission file is docs/part-3-2/report.md.
 
-Confirmed: 4–6 paced breathing; fictional student taking a break before a
-presentation; circle-cue sketch as the starting direction. Detailed behavior is
-a proposal for student review. Read README.md, AGENTS.md, and docs/design-pipeline.md.
+Branch: codex/part-3-2, based on ada0f9ba06cbcf37961db7c4daae3757a2b91eb9.
+A checked implementation checkpoint is being published; do not claim its hash
+until Git confirms it. main remains the original Part 3.1 branch.
 
-Created: design proposal and flow, report draft, verification notes. README and
-AGENTS updated to reflect the current milestone. Original starter content outside
-the necessary updates was preserved. Student authorized continuing in Figma after
-briefly suggesting no Figma; preserve baseline design frames.
+Working app: http://127.0.0.1:8000/ . FastAPI serves the built Vue interface.
+The Vite development server is stopped. See README to rebuild or restart.
+Implemented: fixed 60-second 4–6 pacing, pause/resume/Stop, text-only cues,
+interruption recovery, independent static support, SQLite session/conversation
+history, optional cue preferences/Forget, strict-schema live model planning and
+answer generation through bounded read-only SQL retrieval, and honest failures.
+Original Figma frames are unchanged.
 
-The report was rewritten in a first-person student voice at the student's request.
-It preserves the AI-use disclosure, proposed-versus-tested distinction, and pending
-commit/upload/access details. Student review of the wording remains needed.
+The student supplied a key locally and approved up to four provider API attempts.
+The allowance is exhausted: one generation attempt rejected HTTP400, one read-only
+model-access check, then two successful generation stages. Do not make additional
+provider calls without a new budget. Local .env now selects openai/gpt-5.4-mini;
+never print or overwrite the key. It and app.sqlite3 are ignored by Git.
 
-Figma file: https://www.figma.com/design/Ec255iH4NSnqPSmo5N6WQ6
-Verified baseline: https://www.figma.com/design/Ec255iH4NSnqPSmo5N6WQ6?node-id=1-391
-Eight editable static screens created. Initial construction errors recovered;
-clipped text repaired and corrected screenshot inspected. No navigation wiring,
-live timing, saving, or real support content exists. Instructor access unverified.
+Actual live request af4f6a8e-1602-441f-9352-3a70c65682d0 produced saved assistant
+message 792a4540-9672-4e2d-913a-8cf8204581c3 in conversation
+57fc339b-7644-4fdd-8cef-28cdfe33de0f. It correctly cited completed session
+9c6fc7e0-e900-4f05-ab77-f77e07fd076a (60.1077 server seconds).
+The first failed live question remains failed without a fabricated reply.
+health.live_verified is true only after a live answer is saved in the current
+server run and resets on restart; historic evidence is in verification notes.
 
-Repository supplied: https://github.com/emadzam/mental-health-skills-app
-The student authorized uploading the Part 3.1 documents. Git was initialized on
-main after verifying that the remote was empty. Design commit:
-`d17d873649c44990a07063d799e9d0561820ca2a`. Push succeeded; `git ls-remote`
-confirmed the same hash on remote main. The report now identifies that design
-commit and links directly to its documents. A subsequent documentation commit
-finalizes the report and upload notes; its remote hash must match local HEAD.
+Checks: 18 backend tests, 7 frontend tests, production build; real guided duration
+60.0138 seconds, API/SQLite/browser IDs and content agreement, refresh/restart
+persistence, support with backend offline, model/database failures, preference
+save/forget, 320px layout and keyboard support access. A later outcome shows
+separate setup timing (0.1 seconds in a fast automated walkthrough, not a human
+setup estimate). Screenshots in docs/evidence are fictional records only.
 
-Next: review proposed choices with the student, confirm design/repository sharing,
-and submit the finalized report to the course submission page. No packages,
-runtime code, credentials, database, deployment, or clinical testing was added.
+Next: verify the published checkpoint and final report links. The student must
+review and upload the Part 3.2 report to the course page; no course submission,
+main merge, external deployment, or video recording is authorized/performed.
+Remaining product limits: single-user/single-tab, no full accessibility audit or
+automatic retention controls, no clinical-effectiveness claim. Preserve all local
+records, unfinished work, and the Part 3.1 files.

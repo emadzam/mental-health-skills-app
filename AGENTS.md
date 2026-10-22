@@ -5,18 +5,27 @@ root and preserve existing code, data, and unfinished work. Read the README and,
 when present, `docs/design-pipeline.md` and `handoffs/current.md` before changes.
 These instructions are self-contained; no course website is needed to use them.
 
-## Current milestone: Part 3.1 only
+## Current milestone: Part 3.2 — Working Application and Safety
 
 The student selected 4–6 paced breathing and a fictional student taking a short
 break before a presentation, and approved the circle-cue sketch as a starting
-direction. Prepare research/design documents and editable Figma mockups only.
-Detailed behavior remains a proposal for review. No application implementation,
-package installation, credentials, database, or deployment is authorized by this
-design task. Preserve original Figma frames for comparison. The user supplied
+direction. The student has now authorized Part 3.2 implementation and approved
+project-local Python and Vue/Vite dependency installation. Start with a clearly
+labeled mock assistant unless local live configuration is present. The student
+later supplied a key locally and approved up to four verification attempts total.
+One generation request failed, a non-generation access check passed, and the two
+corrected generation stages passed. That verification allowance is now exhausted;
+do not make more provider calls without a new budget. The key must stay local.
+Keep the fixed 60-second 4–6 sequence, independent support route, and honest save
+states. Preserve Part 3.1 report.md and original Figma frames. Do not deploy a
+mental-health support service. The user supplied
 https://github.com/emadzam/mental-health-skills-app; repository creation alone
 does not establish that local files were committed or uploaded. The student has
 now authorized Git initialization, commits, and upload of the Part 3.1 documents
-to this repository. Preserve remote work and verify the published version.
+to this repository. The subsequent instruction to complete Part 3.2 authorizes
+publishing its checked feature-branch checkpoint and report. Verify the uploaded
+commit; do not merge main or submit coursework without an explicit request.
+Work on codex/part-3-2 and preserve the pre-existing report.md edits.
 
 ## Startup boundary
 
